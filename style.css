@@ -9,6 +9,11 @@ body{
     text-align: center;
 }
 
+h1{
+    font-size: 10vmin;
+    padding-top: 5vmin;
+}
+
 .container{
     height: 70vh;
     display: flex;
