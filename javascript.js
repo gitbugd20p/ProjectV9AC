@@ -23,10 +23,12 @@ boxes.forEach((box) =>{
         if(turnO){
             box.innerText = "O";
             turnO = false;
+            box.style.color = "#b0413e";
         }
         else{
             box.innerText = "X";
             turnO = true;
+            box.style.color = "blue";
         }
         cnt++;
         box.disabled = true;
@@ -54,14 +56,12 @@ const showWinner = (winner) => {
     msg.innerText = `Congratulation, Winner is: ${winner}`;
     msgContainer.classList.remove("hide");
     disableBoxes();
-    cnt = 0;
 };
 
 const checkDraw = () => {
     if(cnt  === 9){
         msg.innerText = "It's a Draw";
         msgContainer.classList.remove("hide");
-        cnt = 0;
         disableBoxes();
     }
 }
@@ -82,6 +82,7 @@ const checkWinner= () => {
 };
 
 const resetGame = () => {
+    cnt = 0;
     turnO = true;
     enableBoxes();
     msgContainer.classList.add("hide");
